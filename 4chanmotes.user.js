@@ -188,6 +188,20 @@ var EmoteMenu = {
         list.appendChild(el);
       });
     }
+    if (tab.indexOf("vt") >= 0 && window.location.href.match(/https:\/\/boards\.4channel\.org\/vt\//i)) {
+      Object.keys(emotes_data.vt).forEach(function(eid) {
+        let el = document.createElement('div');
+        el.className = 'xa-em-emote';
+        el.setAttribute('data-xa-cmd', 'use-emote');
+
+        let arg = emotes_data.new[eid];
+  
+        el.setAttribute('title', `:${eid}:`);
+        el.innerHTML = `<img src="${emotes_url}${arg}">`;
+  
+        list.appendChild(el);
+      });
+    }
   },
 
   insertEmote: function(code) {
@@ -407,6 +421,7 @@ const menu_html = `
     <li class="xa-em-tabitem" data="emoji">Emoji</li>
     <li class="xa-em-tabitem" data="emotes">Emotes</li>
     <li class="xa-em-tabitem" data="new">New</li>
+    <li class="xa-em-tabitem" data="vt">/vt/</li>
   </ul>
   <div id="xa-em-h"><div id="xa-em-x">Close</div></div>
   <div id="xa-em-l"></div>
