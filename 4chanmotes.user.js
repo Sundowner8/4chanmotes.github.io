@@ -188,7 +188,7 @@ var EmoteMenu = {
         list.appendChild(el);
       });
     }
-    if (tab.indexOf("vt") >= 0 && window.location.href.match(/https:\/\/boards\.4channel\.org\/vt\//i)) {
+    if (tab.indexOf("vt") >= 0) {
       Object.keys(emotes_data.vt).forEach(function(eid) {
         let el = document.createElement('div');
         el.className = 'xa-em-emote';
